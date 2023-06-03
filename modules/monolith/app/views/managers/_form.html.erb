@@ -13,12 +13,12 @@
 
   <div>
     <%= form.label :manager_id, style: "display: block" %>
-    <%= form.text_field :manager_id %>
+    <%= form.select :manager_id, @people.map{ |p| ["#{p.surname}, #{p.forenames}", p.id] }, {include_blank: true}, {required: true} %>
   </div>
 
   <div>
     <%= form.label :managed_id, style: "display: block" %>
-    <%= form.text_field :managed_id %>
+    <%= form.select :managed_id, @people.map{ |p| ["#{p.surname}, #{p.forenames}", p.id] }, {include_blank: true}, {required: true} %>
   </div>
 
   <div>

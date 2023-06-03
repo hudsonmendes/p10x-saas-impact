@@ -17,7 +17,7 @@ class OkrsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create okr" do
     assert_difference("Okr.count") do
-      post okrs_url, params: { okr: { allocation: @okr.allocation, allocation_scale_in_days: @okr.allocation_scale_in_days, archived: @okr.archived, objective: @okr.objective, owner_id: @okr.owner_id, parent_id_id: @okr.parent_id_id, state: @okr.state } }
+      post okrs_url, params: { okr: { allocation: @okr.allocation, allocation_scale_in_days: @okr.allocation_scale_in_days, archived: @okr.archived, objective: @okr.objective, owner_id: @okr.owner_id, parent_id: @okr.parent_id, state: @okr.state } }
     end
 
     assert_redirected_to okr_url(Okr.last)
@@ -34,7 +34,7 @@ class OkrsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update okr" do
-    patch okr_url(@okr), params: { okr: { allocation: @okr.allocation, allocation_scale_in_days: @okr.allocation_scale_in_days, archived: @okr.archived, objective: @okr.objective, owner_id: @okr.owner_id, parent_id_id: @okr.parent_id_id, state: @okr.state } }
+    patch okr_url(@okr), params: { okr: { allocation: @okr.allocation, allocation_scale_in_days: @okr.allocation_scale_in_days, archived: @okr.archived, objective: @okr.objective, owner_id: @okr.owner_id, parent_id: @okr.parent_id, state: @okr.state } }
     assert_redirected_to okr_url(@okr)
   end
 

@@ -12,11 +12,15 @@ class OkrsController < ApplicationController
 
   # GET /okrs/new
   def new
+    @people = Person.all
+    @parents = Okr.all
     @okr = Okr.new
   end
 
   # GET /okrs/1/edit
   def edit
+    @people = Person.all
+    @parents = Okr.where(:id => @okr.id)
   end
 
   # POST /okrs or /okrs.json
@@ -28,6 +32,8 @@ class OkrsController < ApplicationController
         format.html { redirect_to okr_url(@okr), notice: "Okr was successfully created." }
         format.json { render :show, status: :created, location: @okr }
       else
+        @people = Person.all
+        @parents = Okr.all
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @okr.errors, status: :unprocessable_entity }
       end
@@ -41,6 +47,8 @@ class OkrsController < ApplicationController
         format.html { redirect_to okr_url(@okr), notice: "Okr was successfully updated." }
         format.json { render :show, status: :ok, location: @okr }
       else
+        @people = Person.all
+        @parents = Okr.where(:id => @okr.id)
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @okr.errors, status: :unprocessable_entity }
       end
@@ -65,6 +73,6 @@ class OkrsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def okr_params
-      params.require(:okr).permit(:parent_id_id, :objective, :allocation, :allocation_scale_in_days, :owner_id, :state, :archived)
+      params.require(:okr).permit(:parent_id, :objective, :allocation, :allocation_scale_in_days, :owner_id, :state, :archived)
     end
 end

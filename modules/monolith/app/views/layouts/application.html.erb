@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Roles", roles_path %></li>
+        <li><%= link_to "People", people_path %></li>
+        <li><%= link_to "Metrics", metrics_path %></li>
+        <li><%= link_to "OKRs", okrs_path %></li>
+        <li><%= link_to "Managers", managers_path %></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

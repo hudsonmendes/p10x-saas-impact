@@ -28,17 +28,17 @@
 
   <div>
     <%= form.label :role_id, style: "display: block" %>
-    <%= form.text_field :role_id %>
+    <%= form.select :role_id, @roles.map{ |r| ["#{r.internal_name}, Level #{r.level}", r.id] }, {include_blank: true}, {required: true} %>
   </div>
 
   <div>
     <%= form.label :hired_at, style: "display: block" %>
-    <%= form.datetime_field :hired_at %>
+    <%= form.date_field :hired_at %>
   </div>
 
   <div>
     <%= form.label :terminated_at, style: "display: block" %>
-    <%= form.datetime_field :terminated_at %>
+    <%= form.date_field :terminated_at %>
   </div>
 
   <div>

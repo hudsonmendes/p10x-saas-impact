@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_225952) do
   end
 
   create_table "okrs", force: :cascade do |t|
-    t.bigint "parent_id_id", null: false
+    t.bigint "parent_id"
     t.string "objective"
     t.integer "allocation"
     t.integer "allocation_scale_in_days"
@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_225952) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_okrs_on_owner_id"
-    t.index ["parent_id_id"], name: "index_okrs_on_parent_id_id"
+    t.index ["parent_id"], name: "index_okrs_on_parent_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -92,7 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_03_225952) do
   add_foreign_key "managers", "people", column: "manager_id"
   add_foreign_key "okr_key_results", "metrics"
   add_foreign_key "okr_key_results", "okrs"
-  add_foreign_key "okrs", "okrs", column: "parent_id_id"
+  add_foreign_key "okrs", "okrs", column: "parent_id"
   add_foreign_key "okrs", "people", column: "owner_id"
   add_foreign_key "people", "roles"
 end

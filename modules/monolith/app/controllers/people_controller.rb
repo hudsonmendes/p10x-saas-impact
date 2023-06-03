@@ -12,11 +12,13 @@ class PeopleController < ApplicationController
 
   # GET /people/new
   def new
+    @roles = Role.all
     @person = Person.new
   end
 
   # GET /people/1/edit
   def edit
+    @roles = Role.all
   end
 
   # POST /people or /people.json
@@ -28,6 +30,7 @@ class PeopleController < ApplicationController
         format.html { redirect_to person_url(@person), notice: "Person was successfully created." }
         format.json { render :show, status: :created, location: @person }
       else
+        @roles = Role.all
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
@@ -41,6 +44,7 @@ class PeopleController < ApplicationController
         format.html { redirect_to person_url(@person), notice: "Person was successfully updated." }
         format.json { render :show, status: :ok, location: @person }
       else
+        @roles = Role.all
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end

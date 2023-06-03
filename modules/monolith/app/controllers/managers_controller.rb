@@ -12,11 +12,13 @@ class ManagersController < ApplicationController
 
   # GET /managers/new
   def new
+    @people = Person.all
     @manager = Manager.new
   end
 
   # GET /managers/1/edit
   def edit
+    @people = Person.all
   end
 
   # POST /managers or /managers.json
@@ -28,6 +30,7 @@ class ManagersController < ApplicationController
         format.html { redirect_to manager_url(@manager), notice: "Manager was successfully created." }
         format.json { render :show, status: :created, location: @manager }
       else
+        @people = Person.all
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @manager.errors, status: :unprocessable_entity }
       end
@@ -41,6 +44,7 @@ class ManagersController < ApplicationController
         format.html { redirect_to manager_url(@manager), notice: "Manager was successfully updated." }
         format.json { render :show, status: :ok, location: @manager }
       else
+        @people = Person.all
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @manager.errors, status: :unprocessable_entity }
       end

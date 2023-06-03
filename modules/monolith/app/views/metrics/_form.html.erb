@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :data_type, style: "display: block" %>
-    <%= form.number_field :data_type %>
+    <%= form.select :data_type, options_for_select(Metric.DataTypes.map { |key, value| [key.capitalize, value] }) %>
   </div>
 
   <div>

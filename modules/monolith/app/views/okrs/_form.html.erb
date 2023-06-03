@@ -12,8 +12,8 @@
   <% end %>
 
   <div>
-    <%= form.label :parent_id_id, style: "display: block" %>
-    <%= form.text_field :parent_id_id %>
+    <%= form.label :parent_id, style: "display: block" %>
+    <%= form.select :parent_id, @parents.map{ |p| ["[OKR #{p.hierarchical_sequence}] #{p.objective}"] }, {include_blank: nil}, {required: false} %>
   </div>
 
   <div>
@@ -33,12 +33,12 @@
 
   <div>
     <%= form.label :owner_id, style: "display: block" %>
-    <%= form.text_field :owner_id %>
+    <%= form.select :owner_id, @people.map{ |p| ["#{p.surname}, #{p.forenames}", p.id] }, {include_blank: true}, {required: true} %>
   </div>
 
   <div>
     <%= form.label :state, style: "display: block" %>
-    <%= form.number_field :state %>
+    <%= form.select :state, options_for_select(Okr.States.map { |key, value| [key.capitalize, value] }) %>
   </div>
 
   <div>

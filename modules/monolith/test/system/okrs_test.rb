@@ -19,7 +19,7 @@ class OkrsTest < ApplicationSystemTestCase
     check "Archived" if @okr.archived
     fill_in "Objective", with: @okr.objective
     fill_in "Owner", with: @okr.owner_id
-    fill_in "Parent id", with: @okr.parent_id_id
+    fill_in "Parent id", with: @okr.parent_id
     fill_in "State", with: @okr.state
     click_on "Create Okr"
 
@@ -36,7 +36,7 @@ class OkrsTest < ApplicationSystemTestCase
     check "Archived" if @okr.archived
     fill_in "Objective", with: @okr.objective
     fill_in "Owner", with: @okr.owner_id
-    fill_in "Parent id", with: @okr.parent_id_id
+    fill_in "Parent id", with: @okr.parent_id
     fill_in "State", with: @okr.state
     click_on "Update Okr"
 
