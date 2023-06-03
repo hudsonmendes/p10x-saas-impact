@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @okr_key_result %>
+
+<div>
+  <%= link_to "Edit this okr key result", edit_okr_key_result_path(@okr_key_result) %> |
+  <%= link_to "Back to okr key results", okr_key_results_path %>
+
+  <%= button_to "Destroy this okr key result", @okr_key_result, method: :delete %>
+</div>

@@ -1,0 +1,52 @@
+<%= form_with(model: okr) do |form| %>
+  <% if okr.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(okr.errors.count, "error") %> prohibited this okr from being saved:</h2>
+
+      <ul>
+        <% okr.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :parent_id_id, style: "display: block" %>
+    <%= form.text_field :parent_id_id %>
+  </div>
+
+  <div>
+    <%= form.label :objective, style: "display: block" %>
+    <%= form.text_field :objective %>
+  </div>
+
+  <div>
+    <%= form.label :allocation, style: "display: block" %>
+    <%= form.number_field :allocation %>
+  </div>
+
+  <div>
+    <%= form.label :allocation_scale_in_days, style: "display: block" %>
+    <%= form.number_field :allocation_scale_in_days %>
+  </div>
+
+  <div>
+    <%= form.label :owner_id, style: "display: block" %>
+    <%= form.text_field :owner_id %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.number_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :archived, style: "display: block" %>
+    <%= form.check_box :archived %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  parent_id: one
+  objective: MyString
+  allocation: 1
+  allocation_scale_in_days: 1
+  owner: one
+  state: 1
+  archived: false
+
+two:
+  parent_id: two
+  objective: MyString
+  allocation: 1
+  allocation_scale_in_days: 1
+  owner: two
+  state: 1
+  archived: false

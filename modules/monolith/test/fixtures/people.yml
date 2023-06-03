@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  surname: MyString
+  forenames: MyString
+  pronouns: MyString
+  role: one
+  hired_at: 2023-06-03 23:42:24
+  terminated_at: 2023-06-03 23:42:24
+
+two:
+  surname: MyString
+  forenames: MyString
+  pronouns: MyString
+  role: two
+  hired_at: 2023-06-03 23:42:24
+  terminated_at: 2023-06-03 23:42:24

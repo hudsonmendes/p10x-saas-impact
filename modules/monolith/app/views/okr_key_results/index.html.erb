@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Okr key results</h1>
+
+<div id="okr_key_results">
+  <% @okr_key_results.each do |okr_key_result| %>
+    <%= render okr_key_result %>
+    <p>
+      <%= link_to "Show this okr key result", okr_key_result %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New okr key result", new_okr_key_result_path %>
